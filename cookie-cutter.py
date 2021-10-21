@@ -46,10 +46,9 @@ def read_cookies(fname):
             req = fin.read()
 
     cookies = [x for x in req.split('\n')
-                if 'cookie' in x.lower()][0].split(':')[1].strip().split(';')
+                if 'cookie' in x.lower()][0].split(':', 1)[1].strip().split(';')
     cookies = [x.strip() for x in cookies]
     return cookies
-
 
 
 if __name__ == '__main__':
